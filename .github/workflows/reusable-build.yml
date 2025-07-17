@@ -1,12 +1,15 @@
 name: Reusable Build
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       app_name:
+        description: "Nombre de la app para la variable de entorno APP_NAME"
         required: true
-        type: string
-        description: "Nombre de la app para la variable de entorno APP_NAME (web1 o web2)"
+        type: choice
+        options:
+          - web1
+          - web2
 
 jobs:
   build:
@@ -14,13 +17,6 @@ jobs:
     env:
       APP_NAME: ${{ inputs.app_name }}
     steps:
-      - name: Validate app_name input
-        run: |
-          if [[ "${{ inputs.app_name }}" != "web1" && "${{ inputs.app_name }}" != "web2" ]]; then
-            echo "Error: app_name debe ser 'web1' o 'web2'."
-            exit 1
-          fi
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
