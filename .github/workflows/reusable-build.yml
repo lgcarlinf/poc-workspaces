@@ -1,15 +1,12 @@
 name: Reusable Build
 
-on:
-  workflow_dispatch:
+          - web2
+  workflow_call:
     inputs:
       app_name:
         description: "Nombre de la app para la variable de entorno APP_NAME"
         required: true
-        type: choice
-        options:
-          - web1
-          - web2
+        type: string
 
 jobs:
   build:
