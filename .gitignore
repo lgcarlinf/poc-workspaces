@@ -1,0 +1,25 @@
+# Node
+node_modules/
+.pnpm/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env*
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Others
+*.local
+*.log

@@ -1,0 +1,14 @@
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_name:
+        description: "Nombre de la app para la variable de entorno APP_NAME"
+        required: false
+        default: web1
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      app_name: ${{ inputs.app_name || 'web1' }}

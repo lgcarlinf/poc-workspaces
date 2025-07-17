@@ -1,0 +1,28 @@
+{
+    "name": "@poc/workspace",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Monorepo de prueba de concepto usando pnpm workspaces",
+    "scripts": {
+        "build": "pnpm tsx script/build.ts",
+        "dev": "pnpm -r dev",
+        "test": "pnpm -r test",
+        "lint": "pnpm -r lint",
+        "clean": "pnpm -r clean",
+        "install:all": "pnpm install",
+        "run:hola": "pnpm tsx script/hola.ts",
+        "build:web1": "pnpm exec tsx script/build-web1.ts",
+        "build:web2": "pnpm exec tsx script/build-web2.ts",
+        "hola": "echo 'Hola mundo' "
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.14",
+        "tsx": "^4.20.3",
+        "typescript": "^5.0.0"
+    },
+    "engines": {
+        "node": ">=18",
+        "pnpm": ">=8"
+    },
+    "packageManager": "pnpm@8.15.0"
+}
